@@ -2,6 +2,7 @@
 
 - [[Home]]
 - [[Documentation-Surfaces]]
+- [[Process-Index]]
 - [[Drift-Findings]]
 - [[Ownership-Model]]
 - [[Remediation-Checklist]]

@@ -11,6 +11,7 @@ It is published automatically from the [`wiki/`](https://github.com/CivicTechWR/
 | Page | What it answers |
 | --- | --- |
 | [[Documentation-Surfaces]] | Where do our docs live, and which surfaces are actually current? |
+| [[Process-Index]] | Every process we run, and where each one is written down. |
 | [[Drift-Findings]] | What is out of date, contradictory, or duplicated right now? |
 | [[Ownership-Model]] | Which surface owns which fact — and what to do instead of restating it? |
 | [[Remediation-Checklist]] | What are we fixing, in what order, and who has it? |

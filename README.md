@@ -13,6 +13,7 @@ Direct edits in the GitHub wiki UI are overwritten on the next merge.
 | Page | What it answers |
 | --- | --- |
 | [Documentation Surfaces](wiki/Documentation-Surfaces.md) | Where our docs live, and which are actually current |
+| [Process Index](wiki/Process-Index.md) | Every process we run, and where each one is defined |
 | [Drift Findings](wiki/Drift-Findings.md) | What is out of date, contradictory, or duplicated |
 | [Ownership Model](wiki/Ownership-Model.md) | Which surface owns which fact |
 | [Remediation Checklist](wiki/Remediation-Checklist.md) | What we're fixing, in what order |
