@@ -1,0 +1,1 @@
+Generated from [`core/wiki/`](https://github.com/CivicTechWR/core/tree/main/wiki) — direct edits here are overwritten on the next merge to `main`. See [[Editing-This-Wiki]]. · Audit snapshot: 2026-08-19

@@ -1,0 +1,129 @@
+name: Publish Wiki
+
+# Mirrors the wiki/ directory to this repo's GitHub Wiki.
+#
+# The wiki is generated — wiki/ in this repo is the source of truth, and direct
+# edits made in the GitHub wiki UI are overwritten on the next run.
+#
+# Uses only actions/checkout plus plain git: the org restricts Actions to
+# GitHub-owned, Marketplace-verified, peaceiris/* and ruby/*, so a third-party
+# wiki action would need a policy exception.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "wiki/**"
+      - ".github/workflows/publish-wiki.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Never let two publishes race for the wiki's single branch.
+concurrency:
+  group: publish-wiki
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Mirror wiki/ to GitHub Wiki
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Validate wiki source
+        run: |
+          set -euo pipefail
+
+          if [ ! -d wiki ]; then
+            echo "::error::wiki/ directory not found. Refusing to publish — this would wipe the wiki."
+            exit 1
+          fi
+
+          # Guard against a bad merge emptying the directory and blanking the wiki.
+          page_count=$(find wiki -maxdepth 1 -name '*.md' -type f | wc -l | tr -d ' ')
+          if [ "$page_count" -eq 0 ]; then
+            echo "::error::wiki/ contains no .md pages. Refusing to publish — this would wipe the wiki."
+            exit 1
+          fi
+
+          if [ ! -f wiki/Home.md ]; then
+            echo "::error::wiki/Home.md is missing. The wiki landing page would 404."
+            exit 1
+          fi
+
+          # GitHub flattens the wiki into a single namespace; nested pages are silently lost.
+          if find wiki -mindepth 2 -name '*.md' -type f | grep -q .; then
+            echo "::error::Nested .md files found under wiki/. GitHub wikis are a flat namespace."
+            find wiki -mindepth 2 -name '*.md' -type f
+            exit 1
+          fi
+
+          echo "Validated $page_count page(s):"
+          find wiki -maxdepth 1 -name '*.md' -type f -exec basename {} \; | sort | sed 's/^/  /'
+
+      - name: Publish to wiki
+        env:
+          # GITHUB_TOKEN with contents:write can push to the wiki. If the org ever
+          # restricts that, set a WIKI_TOKEN secret (a PAT with repo scope) instead.
+          GH_TOKEN: ${{ secrets.WIKI_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          WIKI_REMOTE="https://github.com/${GITHUB_REPOSITORY}.wiki.git"
+          WIKI_DIR="$(mktemp -d)"
+
+          # The wiki repo only exists once the wiki has been initialised with at
+          # least one page through the web UI. Fail with a usable message if not.
+          if ! git ls-remote "$WIKI_REMOTE" >/dev/null 2>&1; then
+            echo "::error::Cannot reach ${GITHUB_REPOSITORY}.wiki.git. Create the first wiki page in the GitHub UI to initialise it, then re-run."
+            exit 1
+          fi
+
+          # Clone anonymously (public repo) so the token never lands in a remote URL
+          # that git might echo on error.
+          git clone --quiet --depth 1 "$WIKI_REMOTE" "$WIKI_DIR"
+          cd "$WIKI_DIR"
+
+          # GitHub wiki repos are pinned to 'master' and provide no setting to change
+          # it — pushing a 'main' branch succeeds but HEAD stays on master and the new
+          # branch is ignored. Detect the real branch so this keeps working either way.
+          WIKI_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+          echo "Wiki default branch: ${WIKI_BRANCH}"
+
+          # Mirror the directory, including deletions. Keep .git.
+          rsync --archive --delete --exclude '.git' "${GITHUB_WORKSPACE}/wiki/" ./
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --all
+
+          if git diff --cached --quiet; then
+            echo "Wiki already matches wiki/ — nothing to publish."
+            exit 0
+          fi
+
+          git commit --quiet \
+            --message "Publish wiki from ${GITHUB_SHA:0:7}" \
+            --message "Source: ${GITHUB_REPOSITORY}@${GITHUB_SHA}
+          Workflow: ${GITHUB_WORKFLOW} run ${GITHUB_RUN_ID}"
+
+          git remote set-url origin \
+            "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.wiki.git"
+          git push --quiet origin "HEAD:${WIKI_BRANCH}"
+
+          echo "Published to https://github.com/${GITHUB_REPOSITORY}/wiki"
+
+      - name: Summary
+        if: success()
+        run: |
+          {
+            echo "### Wiki published"
+            echo ""
+            echo "https://github.com/${GITHUB_REPOSITORY}/wiki"
+            echo ""
+            echo "Source: \`wiki/\` at \`${GITHUB_SHA:0:7}\`"
+          } >> "$GITHUB_STEP_SUMMARY"
