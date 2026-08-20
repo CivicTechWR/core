@@ -1,6 +1,6 @@
 # Remediation Checklist
 
-Fixes derived from [[Drift-Findings]], ordered by cost-to-fix ratio. Nothing here is assigned yet — owners and dates go in the table as they are picked up at an organizers meeting.
+Fixes derived from [[Drift-Findings]] and [[Process-Index]], ordered by cost-to-fix ratio. Nothing here is assigned yet — owners and dates go in the table as they are picked up at an organizers meeting.
 
 Check items off by editing [`wiki/Remediation-Checklist.md`](https://github.com/CivicTechWR/core/blob/main/wiki/Remediation-Checklist.md) in the `core` repo and merging to `main`.
 
@@ -33,6 +33,33 @@ Check items off by editing [`wiki/Remediation-Checklist.md`](https://github.com/
 - [ ] **Remove the Code of Conduct copies** that shadow the org-level `.github` one — starting with the project template, so new repos stop inheriting the duplication. → finding 10
 - [ ] **Clean the ~10 theme demo posts** out of the `blog` repo. → [[Documentation-Surfaces]]
 - [ ] **Add per-season Discourse categories** for Seasons 6–8, or drop the per-season category pattern entirely. Move Season 8 out of `Internal Staff Discussion`. → [[Documentation-Surfaces]]
+
+---
+
+## Marketing
+
+Day-to-day content work — posts, photography, design assets — is tracked on **[Project 46](https://github.com/orgs/CivicTechWR/projects/46)**, not here. This section carries only the marketing items that are documentation or policy gaps, or that need a decision rather than a doer.
+
+Applying [[Ownership-Model]]: where an item is already on the board, this list points at it instead of restating the detail. Marked *on the board* below.
+
+**Needs a decision — carries risk**
+
+- [ ] **Adopt a photo consent practice.** We assign a volunteer to photograph attendees at every event and publish the results, and `PrivacyPolicy.md` does not mention photos, images, video or likeness. Minimum viable: a line on the Luma event page, a sign at the door, and a mention in the hacknight welcome — the Emcee role already greets newcomers. Worth closing *before* the next event shoot. → [[Process-Index]]
+- [ ] **Decide the newsletter question.** A live Mailchimp signup is collecting addresses from people who then hear nothing. Adopt it with an owner and a cadence, or take the form down. Leaving it as-is is the worst of the three. *On the board.*
+
+**Documentation gaps**
+
+- [ ] **Write the blog's missing `CONTRIBUTING.md`.** `blog/README.md` links to it and the link 404s, so nobody can follow the one process that would rebuild blog cadence. *On the board.*
+- [ ] **Correct the channel list in `SocialMedia_Guidelines.md`** — Twitter and Meetup out, Bluesky and Threads in. *On the board.*
+- [ ] **Write a photo storage convention and a shot list.** `Photos/YYYY/YYYY-MM-DD-event/` for storage; a five-line shot list so a volunteer knows when they are done. Drive currently holds 50 undifferentiated files from one day in 2025, with duplicates.
+- [ ] **Write down a brand voice and tone**, even a single page. Nothing exists anywhere in the org.
+- [ ] **Refresh the MediaKit** for the channels actually in use. *On the board.*
+
+**Later — after the pipeline is proven**
+
+- [ ] **Set the actual publishing cadence** — only once the blog has shipped a post or two. Whether to keep the blog at all is the Second pass item above; this is the follow-on to it. Committing to a number before the pipeline is proven is how the last one died.
+- [ ] **Create recurring photo items at the start of each season**, one per hacknight, rather than relying on someone remembering weekly. The absence of this is the same mechanism that killed the blog.
+- [ ] **Decide whether to measure reach at all** — and if so, what. Currently nothing is measured.
 
 ---
 
