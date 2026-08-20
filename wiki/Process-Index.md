@@ -74,13 +74,35 @@ Locations are abbreviated:
 | Process | Defined in | |
 | --- | --- | --- |
 | **Which channel to use** | org-docs `Communication_Guidelines.md` (2025-01) — lists Slack, Email, GitHub, **Meetup**; omits Discourse<br>.github `CONTRIBUTING.md` § Communication Channels — Slack, GitHub issues, Email, organizers team; omits Discourse<br>Discourse — *How to Use the Slack ↔ Discourse Integration* (2026-02) — the only one that covers Discourse, and login-gated | ❌ |
-| Social media | org-docs `SocialMedia_Guidelines.md` (2025-01)<br>Drive `Organizing/Example Social Media Posts` (2024-11)<br>Drive `Organizing/MediaKit/` — blurbs, branding | ⚠️ |
 | Slack ↔ Discourse integration | Discourse — *How to Use the Slack ↔ Discourse Integration* | ✅ |
 | Community outreach interviews | org-docs `InterviewQuestions.md` | ✅ |
 | Outreach email | org-docs `OutreachLetter.md`<br>Drive `OrganizerContent/Outreach.gsheet` (tracking) | ⚠️ |
-| Publishing a blog post | Named as a duty in Discourse *Volunteer Roles* ("maintain the blog and newsletter"). No process, no owner, no cadence — and the blog has been silent since 2025-09 | 📭 |
-| Newsletter | ctwr-web `_includes/newsletter-signup.html` exists; no process behind it | 📭 |
 | Meeting notes | Discourse `Meeting Notes` category + auto-populating template (2026-02)<br>Discourse `Organizers Meetings` category (17 topics — where they actually go)<br>Drive `Organizing/ Meeting notes/` (through 2025-01) | ⚠️ |
+
+---
+
+## Marketing and content
+
+| Process | Defined in | |
+| --- | --- | --- |
+| Marketing work intake and tracking | [GitHub Project 46 — *Marketing*](https://github.com/orgs/CivicTechWR/projects/46) (2026-08) — Triage / Now / Cadence / Editorial views, typed by Content type, Channel, dates and Effort | ✅ |
+| **Social media posting** | org-docs `SocialMedia_Guidelines.md` (2025-01) — generic advice, and its channel list names **Twitter and Meetup** while omitting **Bluesky and Threads**, both live on the site<br>Drive `Organizing/Example Social Media Posts` (2024-11) | ❌ |
+| Brand assets | Drive `Organizing/MediaKit/Branding/` — brandmarks (SVG + PNG), pre-sized social images, sticker PDF, favicons<br>Sized for `400_Twitter` and `180_Facebook`; nothing for Bluesky or Threads | ⚠️ |
+| Boilerplate copy and blurbs | Drive `Organizing/MediaKit/CivicTechWRBlurbs` | ✅ |
+| Brand voice and tone | — | 📭 |
+| Visual design system (colour, type) | — nothing anywhere in the org beyond the logo files | 📭 |
+| **Publishing a blog post** | `blog/README.md` links to a `CONTRIBUTING.md` that **does not exist** — the link 404s<br>Named as a duty in Discourse *Volunteer Roles* ("maintain the blog and newsletter"); no owner, no cadence, silent since 2025-09 | 📭 |
+| Newsletter | ctwr-web `_includes/newsletter-signup.html` — a **live Mailchimp list** collecting addresses<br>No sends, no owner, no process | 📭 |
+| Event photography | org-docs `EventRoles.md` § Photo & Social Media — the role exists, but no shot list, no storage convention<br>Drive `Photos/` is 50 undifferentiated files from 2025-03, with duplicates | 📭 |
+| **Photo consent and likeness** | — nothing. `PrivacyPolicy.md` does not mention photos, images, video or likeness, though we assign a volunteer to photograph attendees and publish the results | 📭 |
+| Content calendar and cadence | GitHub Project 46 *Cadence* view (2026-08) — the mechanism now exists; no cadence has been agreed | ⚠️ |
+| Press and media relations | Drive `Organizing/MediaKit/`<br>Blog "In the news" posts (2018) — no current process | 📭 |
+| Measuring reach or impact | — | 📭 |
+
+Marketing is the least-documented area in this index: **eight of thirteen processes have nothing written down at all.** The two that carry risk rather than just drag:
+
+- **Photo consent.** We assign someone to photograph attendees at every event and publish the results, and no policy anywhere covers it. Worth closing before photography ramps up, not after.
+- **The newsletter.** A live Mailchimp form is collecting addresses from people who then hear nothing. Either adopt it or take the form down; leaving it is the worst of the three options.
 
 ---
 
@@ -132,17 +154,19 @@ Locations are abbreviated:
 
 ## Summary
 
-**56 processes.** Fewer than half have a single home.
+**66 processes.** Fewer than half have a single home.
 
 | | Count |
 | --- | --- |
-| ❌ Conflicting definitions | 7 |
-| ⚠️ Multiple locations, broadly agreeing | 18 |
-| ✅ Single source | 21 |
-| 📭 Not written down | 10 |
+| ❌ Conflicting definitions | 8 |
+| ⚠️ Multiple locations, broadly agreeing | 19 |
+| ✅ Single source | 23 |
+| 📭 Not written down | 16 |
 
-**The seven conflicts are the ones that need a decision**, not an edit: season length, hacknight procedure, event roles, meeting time, the role model, which channel to use, and which project template is canonical. Each has two or more good-faith answers written by different people at different times, and no rule for picking between them — which is the gap [[Ownership-Model]] exists to close.
+**The eight conflicts are the ones that need a decision**, not an edit: season length, hacknight procedure, event roles, meeting time, the role model, which channel to use, which social channels we are on, and which project template is canonical. Each has two or more good-faith answers written by different people at different times, and no rule for picking between them — which is the gap [[Ownership-Model]] exists to close.
 
-**The ten gaps are mostly money and endings** — offboarding, funding, expenses, retros, season finales, blog publishing. Things that happen a few times a year, get done by whoever did them last, and were never written down.
+**The sixteen gaps cluster in two places** — marketing, and money and endings. Marketing alone accounts for eight of them. The rest are offboarding, funding, expenses, retros, season finales: things that happen a few times a year, get done by whoever did them last, and were never written down.
+
+Two of the gaps carry real risk rather than just friction, both in marketing: **no photo consent practice** while we photograph attendees and publish the results, and **a live newsletter signup** collecting addresses from people who then hear nothing.
 
 One pattern worth naming: **where a process exists in both a repo and on Discourse, the Discourse copy is almost always more current and more correct.** Reference material stayed in Git and went stale; the live instances moved to Discourse and stayed accurate. That seam — templates in Git, instances on Discourse — is sensible and worth keeping deliberately rather than by accident.
