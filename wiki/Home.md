@@ -14,6 +14,7 @@ It is published automatically from the [`wiki/`](https://github.com/CivicTechWR/
 | [[Process-Index]] | Every process we run, and where each one is written down. |
 | [[Drift-Findings]] | What is out of date, contradictory, or duplicated right now? |
 | [[Marketing]] | What tooling we already have, what still needs building, and where the risk is. |
+| [[Marketing-Practices]] | What we actually publish — post types, conventions, and what performs. |
 | [[Ownership-Model]] | Which surface owns which fact — and what to do instead of restating it? |
 | [[Remediation-Checklist]] | What are we fixing, in what order, and who has it? |
 | [[Editing-This-Wiki]] | How to change these pages and how publishing works. |

@@ -51,6 +51,8 @@ Service configuration lives in the private `ctwr-apps` repo.
 
 **Postiz is the significant find.** It covers most of what we would otherwise build ourselves, and it already runs. **Shlink answers the "we don't measure anything" gap** — link tracking is a solved problem here, just an unused one.
 
+Observed output across every channel is inventoried on [[Marketing-Practices]].
+
 ---
 
 ## How events flow today
@@ -140,7 +142,7 @@ Detail and current locations are on [[Process-Index]]. Summary of state:
 2. **Event page checklist** — creating the Luma event is named as a duty and defined nowhere. Needs a title convention (we have three separators doing the same job), description structure, image, and how far ahead to publish.
 3. **Photo shot list and storage convention** — `Photos/YYYY/YYYY-MM-DD-event/`, plus a five-line shot list so a volunteer knows when they are done.
 4. **Photo consent practice** — see Risks.
-5. **Recap → post pipeline** — we write ~28 recaps a year on Discourse. That is a content engine nobody harvests; a recap is most of a short post already.
+5. **Restart recaps, then build the recap → post pipeline.** Recaps are *not* currently running: 11 in Season 4, 12 in Season 5, then **0 in Season 6**, 2 in Season 7, 1 in Season 8. The habit stopped alongside the blog in late 2025. A recap is most of a short post already, but the input has to exist first. See [[Marketing-Practices]].
 6. **Brand voice and tone** — one page. Nothing exists.
 7. **Channel guidance** — which channel gets what. The current guide names channels we left and omits two we use.
 8. **Measurement** — decide whether we measure reach at all. Shlink makes this cheap if we do.
