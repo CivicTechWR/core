@@ -82,7 +82,7 @@ These were open in `.github/docs/org-audit-2026-06-04.md` and have not moved. �
 
 - [ ] **Add a link-checking job to `core`** covering the drift-prone facts: Slack invite validity, event-channel URLs, cross-repo links. Findings 01, 02 and 07 are all things a machine should have caught.
 - [ ] **Find and vendor the Luma → Discourse sync script.** It runs daily against production with an admin API key and its source is in no repository. Get it into `core`, then rotate the key. → finding 13
-- [ ] **Re-audit.** Suggested cadence: once per season, at the finale. Method is documented on [[Editing-This-Wiki]].
+- [ ] **Re-audit, per pillar.** Once per season, at the finale — each pillar re-audits its own Process Index section rather than one person re-auditing all 68. Tracked as [Theme: Season re-audit](https://github.com/CivicTechWR/core/issues/24) on Project 47. Method is on [[Editing-This-Wiki]].
 
 ---
 
