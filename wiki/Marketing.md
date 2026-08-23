@@ -2,6 +2,34 @@
 
 How CivicTechWR's outward-facing work — blog, social, photography, events, newsletter — is organised, what tooling already exists, and what still needs building.
 
+## Scope
+
+**Marketing is one-to-many, public, published.** Anything one-to-one and private is *out of scope* — partner emails, sponsor requests, speaker invitations, DMs. In CTWR's existing vocabulary that is **outreach**, and the two words are already used that way: `OutreachLetter.md` is a cold-email template, `InterviewQuestions.md` is a community outreach guide, and the Season 8 volunteer role is named "Marketing, **Outreach** and Documentation" — listing them as distinct jobs.
+
+The name stays *Marketing* for that reason. "Outreach" would name the pillar after its own exclusion, and "Comms" collides with `Communication_Guidelines.md`, which covers internal channel choice.
+
+| In scope | Out of scope |
+| --- | --- |
+| Blog, social, newsletter | Partner and sponsor emails |
+| Photography and design assets | Speaker invitations |
+| Press and media (public) | Direct messages of any kind |
+| **Luma event pages and promotion** | Anything addressed to one person |
+
+### Luma sits inside this pillar — the event's public face, not the event
+
+Event work splits cleanly. Marketing owns what the public sees; [[Process-Index]] § Hacknights and events owns the night itself.
+
+| Marketing owns | Events owns |
+| --- | --- |
+| Event page copy, title, image | Venue, food, AV, setup |
+| Publish timing and lead time | Roles on the night |
+| Promotion and cross-posting | Doors, cleanup |
+| Naming conventions | Attendance |
+
+On the board this is `Content type: Event page` and `Channel: Luma`. A blast to registrants is `Newsletter` on the `Luma` channel — which is what it is.
+
+---
+
 This page carries the **narrative and the decisions**. The row-by-row inventory of which marketing process is defined where lives on [[Process-Index]] § Marketing, and the fixes are on [[Remediation-Checklist]] § Marketing. Nothing is restated across the three.
 
 Compiled **2026-08-23**, during Season 8.
@@ -16,8 +44,8 @@ Compiled **2026-08-23**, during Season 8.
 
 | Field | Values |
 | --- | --- |
-| Content type | Blog · Social · Photo · Design asset · Newsletter · Outreach · Brand/guide |
-| Channel | Blog · Instagram · LinkedIn · Bluesky · Threads · Facebook · Newsletter · Multiple |
+| Content type | Blog · Social · Photo · Design asset · Newsletter · Press/media · Brand/guide · Event page |
+| Channel | Blog · Instagram · LinkedIn · Bluesky · Threads · Facebook · Newsletter · Luma · Multiple |
 | Start date / Publish date | The roadmap span — when work begins, when it ships |
 | Effort | S (under an hour) · M (an evening) · L (multiple sessions) |
 
@@ -139,7 +167,7 @@ Detail and current locations are on [[Process-Index]]. Summary of state:
 **To build, in rough order**
 
 1. **Blog contribution process** — `blog/README.md` links to a `CONTRIBUTING.md` that does not exist. This is the one process that would rebuild blog cadence and it currently 404s.
-2. **Event page checklist** — creating the Luma event is named as a duty and defined nowhere. Needs a title convention (we have three separators doing the same job), description structure, image, and how far ahead to publish.
+2. **Event page checklist** — creating the Luma event is named as a duty and defined nowhere. Now explicitly this pillar's job. Needs a title convention (we have three separators doing the same job), description structure, image, and how far ahead to publish.
 3. **Photo shot list and storage convention** — `Photos/YYYY/YYYY-MM-DD-event/`, plus a five-line shot list so a volunteer knows when they are done.
 4. **Photo consent practice** — see Risks.
 5. **Restart recaps, then build the recap → post pipeline.** Recaps are *not* currently running: 11 in Season 4, 12 in Season 5, then **0 in Season 6**, 2 in Season 7, 1 in Season 8. The habit stopped alongside the blog in late 2025. A recap is most of a short post already, but the input has to exist first. See [[Marketing-Practices]].
