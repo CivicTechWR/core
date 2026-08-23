@@ -40,6 +40,8 @@ Check items off by editing [`wiki/Remediation-Checklist.md`](https://github.com/
 
 Day-to-day content work — posts, photography, design assets — is tracked on **[Project 46](https://github.com/orgs/CivicTechWR/projects/46)**, not here. This section carries only the marketing items that are documentation or policy gaps, or that need a decision rather than a doer.
 
+Background and trade-offs for these are on [[Marketing]].
+
 Applying [[Ownership-Model]]: where an item is already on the board, this list points at it instead of restating the detail. Marked *on the board* below.
 
 **Needs a decision — carries risk**
@@ -79,6 +81,7 @@ These were open in `.github/docs/org-audit-2026-06-04.md` and have not moved. �
 ## Ongoing
 
 - [ ] **Add a link-checking job to `core`** covering the drift-prone facts: Slack invite validity, event-channel URLs, cross-repo links. Findings 01, 02 and 07 are all things a machine should have caught.
+- [ ] **Find and vendor the Luma → Discourse sync script.** It runs daily against production with an admin API key and its source is in no repository. Get it into `core`, then rotate the key. → finding 13
 - [ ] **Re-audit.** Suggested cadence: once per season, at the finale. Method is documented on [[Editing-This-Wiki]].
 
 ---

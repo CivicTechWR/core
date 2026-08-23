@@ -1,6 +1,8 @@
 # Drift Findings
 
-Twelve findings from the **2026-08-19** audit, ordered by what a newcomer or volunteer hits first. Number 01 is the one that costs us people.
+Thirteen findings from the **2026-08-19** audit, ordered by what a newcomer or volunteer hits first. Number 01 is the one that costs us people.
+
+Finding 13 was added on 2026-08-23 and is numbered last because it was found last. **By severity it belongs at the top** — it is numbered this way only so the references from [[Remediation-Checklist]] stay stable.
 
 Each finding is tagged: **Broken path** (someone following our docs ends up nowhere), **Contradicted** (two surfaces disagree), **Duplicate** (the same fact maintained in several places), **Stale** (accurate once), **Structural** (a problem with the arrangement, not the content).
 
@@ -125,9 +127,18 @@ Each per-repo copy silently shadows the org-level one. Because the template carr
 ### 11 — The website's fallback meeting time is wrong
 **Contradicted**
 
-`_includes/meeting-section.html` defaults to **6:00 PM** when the Luma fetch returns nothing. Luma currently says **5:30 PM**, which is what the live site shows. The wrong fallback only appears when the sync fails — precisely when nobody is watching.
+`_includes/meeting-section.html` defaults to **6:00 PM** when the Luma fetch returns nothing. The live site shows **5:30 PM**, pulled from Luma. The wrong fallback only appears when the sync fails — precisely when nobody is watching.
 
-Discourse clarifies what neither surface states: **soft start 5:30, hacknight starts 6:00**. Both numbers are correct. Nothing anywhere says both.
+Reading the ICS directly (2026-08-23) shows Luma sets times **per event type**:
+
+| Event | Luma says |
+| --- | --- |
+| Hacknight, 2026-08-19 | 5:30 – 8:00 PM ET |
+| Project Showcase, 2026-08-26 | 6:00 – 9:00 PM ET |
+
+So the hardcoded copies are not arbitrary — they encode "hacknight proper" at 6:00, while Luma publishes the **doors** time. Both are therefore half an hour off for hacknights: the `meeting-section.html` fallback, and `.github/CONTRIBUTING.md`'s "Wednesdays from 6:00–8:00 p.m."
+
+Discourse's hacknight stub is the only place that states the distinction — *soft start 5:30, hacknight starts 6:00* — and it is login-gated. **Luma is the source of truth; nothing else should restate it.**
 
 ---
 
@@ -137,3 +148,24 @@ Discourse clarifies what neither surface states: **soft start 5:30, hacknight st
 The June 2026 org audit closed item 7 with *"TODO: document offboarding cadence in `CTWR-Organization-Documentation`."* That repo has had no content commit since September 2025.
 
 Audit items 1, 3, 5 and 6 — 2FA enforcement, Slack app scoping, org-wide secret scanning, org-wide Dependabot alerts — remain marked waiting, all pending a Slack announcement and a Saturday org meeting.
+
+---
+
+### 13 — A production script runs daily with no source in version control
+**Structural** · *found 2026-08-23*
+
+The Discourse `Events` category is populated by an external script that calls the Discourse API as the `system` user (id −1), daily at about 10:00 UTC, creating one topic per new Luma event with `discourse-calendar` markup and a link to the specific Luma event page.
+
+It is incremental — 12 topics on 2026-05-28, 4 on 2026-04-26, 1–2 on other runs — and was backfilled on 2026-02-04 when the category was created.
+
+**The source code is not in any CivicTechWR repository.** The only Luma code in the org is `ctwr-web/_plugins/fetch_luma_event.rb`, which is the website's build-time fetch, not this. It is not in `ctwr-apps` either.
+
+So a scheduled job runs against production Discourse holding an admin API key, and nobody can point at the code.
+
+- If it breaks, we cannot fix it.
+- If the key leaks or needs rotating, we do not know everywhere it is used.
+- If the person running it steps back, the Events category silently stops.
+
+The audit did not catch this by looking at documentation — it surfaced only by inspecting what the automation actually produced. Worth asking at an organizers meeting whose machine or account it runs from, then getting it into `core`.
+
+See [[Marketing]] for how this fits the wider Luma → website → Discourse flow.
