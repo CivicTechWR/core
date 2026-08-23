@@ -47,7 +47,6 @@ Locations are abbreviated:
 | Event roles on the night | org-docs `EventRoles.md` (2025-09) — 8 per-event roles<br>Discourse — *Volunteer Roles for Season 8* (2026-02) — 5 per-season roles | ❌ |
 | Event planning checklist | org-docs `Event_Planning_Template.md` | ✅ |
 | Meeting time and doors | ctwr-web live site — 5:30 PM (pulled from Luma)<br>ctwr-web `_includes/meeting-section.html` fallback — 6:00 PM<br>.github `CONTRIBUTING.md` — "Wednesdays 6:00–8:00 p.m."<br>Discourse hacknight topic — soft start 5:30, start 6:00 | ❌ |
-| Creating the Luma event | Referenced as a duty in Discourse *Volunteer Roles*, defined nowhere | 📭 |
 | Guest speaker coordination | Discourse — *Volunteer Roles for Season 8* (duties only)<br>Drive `Organizing/List of possible speakers` (2025-02)<br>Drive `Onboarding/Onboarding - CivicTech WR Speaker (COVID)` — **COVID-era** | ⚠️ |
 | Writing hacknight recaps | org-docs `Recaps_Template.md` (template)<br>Discourse `Recaps` category (28 instances) | ⚠️ |
 | Room setup and signage | Drive `OrganizerContent/Signs for Directions` | ✅ |
@@ -85,9 +84,13 @@ Locations are abbreviated:
 
 Narrative, tooling and decisions are on [[Marketing]]; this is the inventory only.
 
+**Scope:** one-to-many and public. Private, one-to-one contact — partner emails, sponsor requests, speaker invitations — is *outreach*, and sits under Communications above.
+
 | Process | Defined in | |
 | --- | --- | --- |
 | Marketing work intake and tracking | [GitHub Project 46 — *Marketing*](https://github.com/orgs/CivicTechWR/projects/46) (2026-08) — Triage / Now / Cadence / Editorial views, typed by Content type, Channel, dates and Effort | ✅ |
+| **Creating the Luma event page** | Referenced as a duty in Discourse *Volunteer Roles*, defined nowhere. Owned by marketing as of 2026-08-23 — the event's public face, not the event. See [[Marketing]] § Scope | 📭 |
+| Luma event naming convention | De facto only. Renamed mid-stream from `Civic Tech WR` to `CivicTechWR` (2026-03-18); three separators in use for speaker events. See [[Marketing-Practices]] | 📭 |
 | **Social media posting** | org-docs `SocialMedia_Guidelines.md` (2025-01) — generic advice, and its channel list names **Twitter and Meetup** while omitting **Bluesky and Threads**, both live on the site<br>Drive `Organizing/Example Social Media Posts` (2024-11) | ❌ |
 | Brand assets | Drive `Organizing/MediaKit/Branding/` — brandmarks (SVG + PNG), pre-sized social images, sticker PDF, favicons<br>Sized for `400_Twitter` and `180_Facebook`; nothing for Bluesky or Threads | ⚠️ |
 | Boilerplate copy and blurbs | Drive `Organizing/MediaKit/CivicTechWRBlurbs` | ✅ |
@@ -101,7 +104,7 @@ Narrative, tooling and decisions are on [[Marketing]]; this is the inventory onl
 | Press and media relations | Drive `Organizing/MediaKit/`<br>Blog "In the news" posts (2018) — no current process | 📭 |
 | Measuring reach or impact | — | 📭 |
 
-Marketing is the least-documented area in this index: **eight of thirteen processes have nothing written down at all.** The two that carry risk rather than just drag:
+Marketing is the least-documented area in this index: **ten of fifteen processes have nothing written down at all.** The two that carry risk rather than just drag:
 
 - **Photo consent.** We assign someone to photograph attendees at every event and publish the results, and no policy anywhere covers it. Worth closing before photography ramps up, not after.
 - **The newsletter.** A live Mailchimp form is collecting addresses from people who then hear nothing. Either adopt it or take the form down; leaving it is the worst of the three options.
@@ -156,18 +159,18 @@ Marketing is the least-documented area in this index: **eight of thirteen proces
 
 ## Summary
 
-**66 processes.** Fewer than half have a single home.
+**67 processes.** Fewer than half have a single home.
 
 | | Count |
 | --- | --- |
 | ❌ Conflicting definitions | 8 |
 | ⚠️ Multiple locations, broadly agreeing | 19 |
 | ✅ Single source | 23 |
-| 📭 Not written down | 16 |
+| 📭 Not written down | 17 |
 
 **The eight conflicts are the ones that need a decision**, not an edit: season length, hacknight procedure, event roles, meeting time, the role model, which channel to use, which social channels we are on, and which project template is canonical. Each has two or more good-faith answers written by different people at different times, and no rule for picking between them — which is the gap [[Ownership-Model]] exists to close.
 
-**The sixteen gaps cluster in two places** — marketing, and money and endings. Marketing alone accounts for eight of them. The rest are offboarding, funding, expenses, retros, season finales: things that happen a few times a year, get done by whoever did them last, and were never written down.
+**The seventeen gaps cluster in two places** — marketing, and money and endings. Marketing alone accounts for ten of the seventeen — now including both Luma rows, which moved here when the pillar took ownership of the event's public face. The rest are offboarding, funding, expenses, retros, season finales: things that happen a few times a year, get done by whoever did them last, and were never written down.
 
 Two of the gaps carry real risk rather than just friction, both in marketing: **no photo consent practice** while we photograph attendees and publish the results, and **a live newsletter signup** collecting addresses from people who then hear nothing.
 
