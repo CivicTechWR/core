@@ -16,6 +16,7 @@ Direct edits in the GitHub wiki UI are overwritten on the next merge.
 | [Process Index](wiki/Process-Index.md) | Every process we run, and where each one is defined |
 | [Drift Findings](wiki/Drift-Findings.md) | What is out of date, contradictory, or duplicated |
 | [Marketing](wiki/Marketing.md) | Tooling we have, what needs building, where the risk is |
+| [Marketing Practices](wiki/Marketing-Practices.md) | What we actually publish, and what performs |
 | [Ownership Model](wiki/Ownership-Model.md) | Which surface owns which fact |
 | [Remediation Checklist](wiki/Remediation-Checklist.md) | What we're fixing, in what order |
 | [Editing This Wiki](wiki/Editing-This-Wiki.md) | How to change pages and how publishing works |
@@ -24,5 +25,8 @@ Direct edits in the GitHub wiki UI are overwritten on the next merge.
 
 ```
 wiki/                            source for the GitHub wiki (flat — one .md per page)
+marketing/archive/               point-in-time snapshots of what we've published
 .github/workflows/publish-wiki.yml   mirrors wiki/ to core.wiki.git on merge to main
 ```
+
+Narrative and decisions live in the wiki; `marketing/` holds the working files and data behind them.
