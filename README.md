@@ -25,5 +25,8 @@ Direct edits in the GitHub wiki UI are overwritten on the next merge.
 
 ```
 wiki/                            source for the GitHub wiki (flat — one .md per page)
+marketing/archive/               point-in-time snapshots of what we've published
 .github/workflows/publish-wiki.yml   mirrors wiki/ to core.wiki.git on merge to main
 ```
+
+Narrative and decisions live in the wiki; `marketing/` holds the working files and data behind them.
