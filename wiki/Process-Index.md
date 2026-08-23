@@ -83,6 +83,8 @@ Locations are abbreviated:
 
 ## Marketing and content
 
+Narrative, tooling and decisions are on [[Marketing]]; this is the inventory only.
+
 | Process | Defined in | |
 | --- | --- | --- |
 | Marketing work intake and tracking | [GitHub Project 46 — *Marketing*](https://github.com/orgs/CivicTechWR/projects/46) (2026-08) — Triage / Now / Cadence / Editorial views, typed by Content type, Channel, dates and Effort | ✅ |
