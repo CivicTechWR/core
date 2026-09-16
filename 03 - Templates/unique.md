@@ -1,7 +1,7 @@
 ---
 title:
 date: "{{date}}"
-reviewed: false
+status: draft
 tags:
 references:
 ---

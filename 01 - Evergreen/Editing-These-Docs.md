@@ -1,7 +1,7 @@
 ---
 title: "Editing These Docs"
 date: "2026-08-19"
-reviewed: false
+status: current
 tags:
 references:
 ---
@@ -29,13 +29,23 @@ To add a page, drop a new `.md` file in `01 - Evergreen/`. There is no navigatio
 ---
 title: "Ownership Model"
 date: "2026-08-19"
-reviewed: false
+status: current
 tags:
 references:
 ---
 ```
 
 `title` is what the browser tab, the sidebar and search results show; without it they fall back to the filename, hyphens and all. The other four are the vault's own properties, declared in `.obsidian/types.json`.
+
+**`status`** is one of three values:
+
+| Value | Means |
+| --- | --- |
+| `draft` | Still being written. New notes start here. |
+| `current` | The page is the record — act on it. |
+| `archived` | Superseded. Kept for history; do not act on it, and say at the top what replaced it. |
+
+Status is metadata only: it does not change what the site publishes. A `draft` page merged to `main` is still public, so the branch remains the real draft stage.
 
 **Linking.** Double brackets, by filename: `[[Ownership-Model]]`. Obsidian resolves these as you type and the site resolves them on build.
 

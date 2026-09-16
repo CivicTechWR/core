@@ -28,13 +28,13 @@ site/                quartz.config.yaml (site build) and wiki-stub.md (retired w
 ---
 title: "Ownership Model"   # published notes only; drives the tab, sidebar and search
 date: "YYYY-MM-DD"
-reviewed: false
+status: current            # draft | current | archived — metadata only, the site ignores it
 tags:
 references:
 ---
 ```
 
-`02 - Attachments/` holds files, not notes — no frontmatter there. Property types are declared in `.obsidian/types.json` (`date`, `reviewed` checkbox, `tags`, `references`/`files` multitext); adding a new property means adding it there too.
+`02 - Attachments/` holds files, not notes — no frontmatter there. Property types are declared in `.obsidian/types.json` (`date`, `status` text, `tags`, `references`/`files` multitext); adding a new property means adding it there too.
 
 **Drafts are branches, not folders.** There is no Inbox or Incubation stage: Obsidian's unique-note command creates notes straight in `01 - Evergreen/` (named `YYYYMMDDHHmm` — rename to `Title-Case.md` before merging), daily notes are off, and pasted files land in `02 - Attachments/`. Work on a branch; a draft PR is the draft. **Merging to `main` is the act that publishes**, so nothing unfinished may be merged into `01 - Evergreen/`.
 
@@ -69,6 +69,7 @@ for f in "01 - Evergreen"/*.md; do
 done
 for f in "01 - Evergreen"/*.md; do
   grep -q '^title:' "$f" || echo "FAIL: no title: $f"
+  grep -qE '^status: (draft|current|archived)$' "$f" || echo "FAIL: status not draft|current|archived: $f"
 done
 
 # dangling [[wiki-links]] — published pages may only link to published pages

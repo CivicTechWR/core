@@ -1,7 +1,7 @@
 ---
 title: "Remediation Checklist"
 date: "2026-08-19"
-reviewed: false
+status: current
 tags:
 references:
 ---
