@@ -1,3 +1,10 @@
+---
+title: "Drift Findings"
+date: "2026-08-19"
+reviewed: false
+tags:
+references:
+---
 # Drift Findings
 
 Thirteen findings from the **2026-08-19** audit, ordered by what a newcomer or volunteer hits first. Number 01 is the one that costs us people.

@@ -1,8 +1,15 @@
+---
+title: "Documentation"
+date: "2026-08-19"
+reviewed: false
+tags:
+references:
+---
 # CivicTechWR Documentation
 
-This wiki is the working record of **where CivicTechWR keeps its operating knowledge**, what state each surface is in, and which surface owns which facts.
+These docs are the working record of **where CivicTechWR keeps its operating knowledge**, what state each surface is in, and which surface owns which facts.
 
-It is published automatically from the [`wiki/`](https://github.com/CivicTechWR/core/tree/main/wiki) directory of the `core` repo. Edit there, open a PR, and merging to `main` republishes this wiki. See [[Editing-This-Wiki]].
+This site is built with [Quartz](https://quartz.jzhao.xyz) from the [`01 - Evergreen/`](https://github.com/CivicTechWR/core/tree/main/01%20-%20Evergreen) folder of the `core` repo — the vault's *evergreen* layer. Edit there, open a PR, and merging to `main` rebuilds this site. See [[Editing-These-Docs]].
 
 ---
 
@@ -12,12 +19,13 @@ It is published automatically from the [`wiki/`](https://github.com/CivicTechWR/
 | --- | --- |
 | [[Documentation-Surfaces]] | Where do our docs live, and which surfaces are actually current? |
 | [[Process-Index]] | Every process we run, and where each one is written down. |
+| [[Process-Modelling]] | What a written-down process should look like — BPMN, CMMN, DMN, and what fits us. |
 | [[Drift-Findings]] | What is out of date, contradictory, or duplicated right now? |
 | [[Marketing]] | What tooling we already have, what still needs building, and where the risk is. |
 | [[Marketing-Practices]] | What we actually publish — post types, conventions, and what performs. |
 | [[Ownership-Model]] | Which surface owns which fact — and what to do instead of restating it? |
 | [[Remediation-Checklist]] | What are we fixing, in what order, and who has it? |
-| [[Editing-This-Wiki]] | How to change these pages and how publishing works. |
+| [[Editing-These-Docs]] | How to change these pages and how publishing works. |
 
 ---
 
@@ -49,4 +57,4 @@ Full list on [[Drift-Findings]].
 
 ---
 
-*Audit date: 2026-08-19. Season 8, week 15. To re-run the audit, see [[Editing-This-Wiki]].*
+*Audit date: 2026-08-19. Season 8, week 15. To re-run the audit, see [[Editing-These-Docs]].*

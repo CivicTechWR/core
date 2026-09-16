@@ -1,3 +1,10 @@
+---
+title: "Documentation Surfaces"
+date: "2026-08-19"
+reviewed: false
+tags:
+references:
+---
 # Documentation Surfaces
 
 An inventory of every place CivicTechWR keeps operating knowledge, as of **2026-08-19**.
@@ -94,6 +101,6 @@ Not a documentation surface as such, but it carries real documentation:
 
 - **`.github`** — the org-wide community-health baseline: Code of Conduct, contributing guide, security policy, seven issue templates, CODEOWNERS, gitleaks config. Also holds the **June 2026 org audit** with open action items.
 - **`CTWR-Project-Template-New`** — a genuinely comprehensive starter: 12-week workflow, accessibility guide, impact tracking, user research templates, wiki templates, setup scripts.
-- **`core`** — this repo. Now the home of this wiki.
+- **`core`** — this repo. Now the home of these docs.
 
 Roughly a dozen live project repos, eight WRvotes repos spanning six election cycles, and eleven archived.

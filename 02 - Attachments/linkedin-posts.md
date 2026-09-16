@@ -1,3 +1,9 @@
+---
+date: "2026-08-23"
+reviewed: false
+tags:
+references:
+---
 # LinkedIn — archived posts
 
 Captured 2026-08-23 from the public company page (`linkedin.com/company/civictechwr`).

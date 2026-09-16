@@ -1,6 +1,13 @@
+---
+title: "Marketing Practices"
+date: "2026-08-23"
+reviewed: false
+tags:
+references:
+---
 # Marketing Practices
 
-What CivicTechWR actually publishes, drawn from every source we could retrieve on **2026-08-23**. This is the observed practice, not a proposal — the raw material sits in [`marketing/archive/`](https://github.com/CivicTechWR/core/tree/main/marketing/archive).
+What CivicTechWR actually publishes, drawn from every source we could retrieve on **2026-08-23**. This is the observed practice, not a proposal — the raw material sits in [`02 - Attachments/`](https://github.com/CivicTechWR/core/tree/main/02%20-%20Attachments).
 
 Decisions and tooling are on [[Marketing]]. This page is evidence.
 

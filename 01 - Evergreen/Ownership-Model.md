@@ -1,3 +1,10 @@
+---
+title: "Ownership Model"
+date: "2026-08-19"
+reviewed: false
+tags:
+references:
+---
 # Ownership Model
 
 ## The problem this solves
@@ -36,7 +43,7 @@ One surface owns each *kind* of fact. Everywhere else links rather than restates
 | --- | --- | --- |
 | Event times, dates, venue, RSVP | **Luma** | Fetch or link. Never restate. |
 | Meeting notes, recaps, in-flight discussion | **Discourse** | Link. |
-| Policies, guidelines, templates, process | **GitHub** (`.github` org repo + this wiki) | Link. |
+| Policies, guidelines, templates, process | **GitHub** (`.github` org repo + these docs) | Link. |
 | Banking, funding applications, signed agreements | **Google Drive** | Link. Nothing else belongs there. |
 | Public narrative — what we did and why | **Blog** | Link. |
 | Project code and project-specific docs | **The project repo** | Link. |
@@ -57,7 +64,7 @@ One surface owns each *kind* of fact. Everywhere else links rather than restates
 
 Adopting this means:
 
-- **The org-docs MkDocs site loses its exclusive claim on process documentation.** Process that changes often should move here, to the `core` wiki, where editing is cheap. Policies with legal or review weight stay in `.github` where CODEOWNERS applies.
+- **The org-docs MkDocs site loses its exclusive claim on process documentation.** Process that changes often should move here, to the `core` docs, where editing is cheap. Policies with legal or review weight stay in `.github` where CODEOWNERS applies.
 - **Discourse stops being a documentation destination** and goes back to being a discussion destination. The `CivicTechWR Wiki` category should be pointed here rather than grown — see [[Drift-Findings]] finding 09.
 - **Drive shrinks deliberately** to only what cannot legally or practically live in Git.
 - **Someone has to own the blog** or it should be honestly retired. Three seasons of silence on our only public narrative surface is itself a message.
@@ -68,5 +75,5 @@ Adopting this means:
 
 An audit of documentation drift that itself goes stale would be a poor joke. Two safeguards:
 
-- This wiki is published from version control, so every change to it is reviewable and dated. See [[Editing-This-Wiki]].
+- These docs are published from version control, so every change to them is reviewable and dated. See [[Editing-These-Docs]].
 - [[Remediation-Checklist]] carries a re-audit item. The drift-prone facts — Slack invites, event channels, season length — are exactly the ones that should eventually be checked by a link-checking job in this repo rather than by a person remembering.

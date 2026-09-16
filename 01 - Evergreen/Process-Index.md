@@ -1,3 +1,10 @@
+---
+title: "Process Index"
+date: "2026-08-19"
+reviewed: false
+tags:
+references:
+---
 # Process Index
 
 Every process CivicTechWR runs, and where it is written down. Many are written down in more than one place — those rows are the work.
@@ -152,10 +159,10 @@ Marketing is the least-documented area in this index: **ten of sixteen processes
 
 | Process | Defined in | |
 | --- | --- | --- |
-| Editing and publishing this wiki | [[Editing-This-Wiki]] + `core/.github/workflows/publish-wiki.yml` | ✅ |
+| Editing and publishing these docs | [[Editing-These-Docs]] + `core/.github/workflows/deploy-site.yml` | ✅ |
 | Editing the org-docs site | org-docs `CONTRIBUTING.md`, `README.md` (local MkDocs setup) | ✅ |
 | Which surface owns which fact | [[Ownership-Model]] (proposed)<br>Discourse *Slack ↔ Discourse Integration* has a "use Discourse for… / use Slack for…" table that already agrees with it | ⚠️ |
-| Re-auditing documentation drift | [[Editing-This-Wiki]] § Re-running the audit | ✅ |
+| Re-auditing documentation drift | [[Editing-These-Docs]] § Re-running the audit | ✅ |
 | Marking Drive content as archived | — | 📭 |
 
 ---
