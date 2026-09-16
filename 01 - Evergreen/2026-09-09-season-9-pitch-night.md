@@ -1,7 +1,7 @@
 ---
 title: "Season 9 Pitch Night — Luma event draft"
 date: "2026-08-30"
-reviewed: false
+status: draft
 tags:
 references:
 ---

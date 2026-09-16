@@ -6,7 +6,7 @@
     "test": "date",
     "date": "date",
     "topics": "multitext",
-    "reviewed": "checkbox",
+    "status": "text",
     "references": "multitext",
     "files": "multitext"
   }

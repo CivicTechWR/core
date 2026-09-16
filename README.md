@@ -36,6 +36,6 @@ site/                Quartz config for the site build, and the retired wiki's st
 .github/workflows/retire-wiki.yml    one-shot, manual: points the old wiki at the site
 ```
 
-Every note carries the frontmatter block from `03 - Templates/unique.md` — `date`, `reviewed`, `tags`, `references` — plus a `title` on published pages. Files in `02 - Attachments/` are not notes and carry none.
+Every note carries the frontmatter block from `03 - Templates/unique.md` — `date`, `status` (`draft` · `current` · `archived`), `tags`, `references` — plus a `title` on published pages. Files in `02 - Attachments/` are not notes and carry none.
 
 Everything in `01 - Evergreen/` on `main` is published, so `[[wiki-links]]` must point at another page in that folder. Images and files in `02 - Attachments/` are not published: embed one and it renders in Obsidian but is missing on the site.
