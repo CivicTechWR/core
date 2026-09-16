@@ -4,7 +4,7 @@ This wiki has been retired. The documentation it held is now published as a site
 
 **https://civictechwr.github.io/core**
 
-The source is the [`03 - Evergreen/`](https://github.com/CivicTechWR/core/tree/main/03%20-%20Evergreen) folder of the [`core`](https://github.com/CivicTechWR/core) repo — an Obsidian vault. Edit there and open a pull request; merging to `main` rebuilds the site.
+The source is the [`01 - Evergreen/`](https://github.com/CivicTechWR/core/tree/main/01%20-%20Evergreen) folder of the [`core`](https://github.com/CivicTechWR/core) repo — an Obsidian vault. Edit there and open a pull request; merging to `main` rebuilds the site.
 
 Pages moved as follows:
 

@@ -1,6 +1,6 @@
 name: Deploy Site
 
-# Builds the docs site from "03 - Evergreen/" with Quartz and deploys it to
+# Builds the docs site from "01 - Evergreen/" with Quartz and deploys it to
 # GitHub Pages at https://civictechwr.github.io/core.
 #
 # Replaces the old wiki mirror. Quartz understands what the GitHub Wiki could not:
@@ -17,7 +17,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "03 - Evergreen/**"
+      - "01 - Evergreen/**"
       - "site/quartz.config.yaml"
       - ".github/workflows/deploy-site.yml"
   workflow_dispatch:
@@ -33,7 +33,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  CONTENT_DIR: "03 - Evergreen"
+  CONTENT_DIR: "01 - Evergreen"
   QUARTZ_REPO: "https://github.com/jackyzha0/quartz.git"
   # Pinned. jackyzha0/quartz v5 @ 2026-08-12. Bump deliberately, and re-read
   # site/quartz.config.yaml against the new quartz.config.default.yaml when you do.

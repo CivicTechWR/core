@@ -5,8 +5,8 @@
 # commit and copies this file in as quartz.config.yaml. Upgrading Quartz means
 # bumping that SHA and re-reading this file against the new template.
 #
-# Content published: "03 - Evergreen/" only. Inbox, Incubation, Attachments and
-# Templates are never copied into the build.
+# Content published: "01 - Evergreen/" only. Attachments and Templates are
+# never copied into the build.
 configuration:
   pageTitle: CivicTechWR
   pageTitleSuffix: " · CivicTechWR"

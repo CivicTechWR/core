@@ -9,21 +9,21 @@ references:
 
 ## Where these pages come from
 
-This site is **generated**. The source of truth is the [`03 - Evergreen/`](https://github.com/CivicTechWR/core/tree/main/03%20-%20Evergreen) folder of the [`core`](https://github.com/CivicTechWR/core) repo, which is an Obsidian vault.
+This site is **generated**. The source of truth is the [`01 - Evergreen/`](https://github.com/CivicTechWR/core/tree/main/01%20-%20Evergreen) folder of the [`core`](https://github.com/CivicTechWR/core) repo, which is an Obsidian vault.
 
-Notes move **`01 - Inbox` → `02 - Incubation` → `03 - Evergreen`**, and only the evergreen layer is published. Promoting a note *is* the act of publishing it.
+Everything in `01 - Evergreen/` on `main` is published. Drafts are **branches**, not folders: write on a branch, open a draft pull request while it is unfinished, and merging to `main` *is* the act of publishing.
 
 ---
 
 ## How to change a page
 
-1. Edit the matching file in [`core/03 - Evergreen/`](https://github.com/CivicTechWR/core/tree/main/03%20-%20Evergreen) — `Drift-Findings.md` becomes the *Drift Findings* page here.
+1. Edit the matching file in [`core/01 - Evergreen/`](https://github.com/CivicTechWR/core/tree/main/01%20-%20Evergreen) — `Drift-Findings.md` becomes the *Drift Findings* page here.
 2. Open a pull request.
 3. Merge to `main`. The site rebuilds and deploys in a couple of minutes.
 
-To add a page, drop a new `.md` file in `03 - Evergreen/`. There is no navigation file to update — the sidebar is generated from the folder.
+To add a page, drop a new `.md` file in `01 - Evergreen/`. There is no navigation file to update — the sidebar is generated from the folder.
 
-**Frontmatter.** Every note starts with a YAML block, copied from `05 - Templates/unique.md`:
+**Frontmatter.** Every note starts with a YAML block, copied from `03 - Templates/unique.md`:
 
 ```yaml
 ---
@@ -39,7 +39,7 @@ references:
 
 **Linking.** Double brackets, by filename: `[[Ownership-Model]]`. Obsidian resolves these as you type and the site resolves them on build.
 
-**Only link to pages that are published.** A double-bracket link to a note in `01 - Inbox/` or `02 - Incubation/` resolves inside Obsidian but dangles on the site, which publishes `03 - Evergreen/` alone.
+**Only link to pages that are published.** The site publishes `01 - Evergreen/` alone. A double-bracket link to anything outside it — including an image embedded from `02 - Attachments/` — resolves inside Obsidian but is missing on the site.
 
 **`index.md` is the landing page.** Quartz serves it at `/`. Do not rename it.
 
@@ -47,7 +47,7 @@ references:
 
 ## How publishing works
 
-[`.github/workflows/deploy-site.yml`](https://github.com/CivicTechWR/core/blob/main/.github/workflows/deploy-site.yml) runs on every push to `main` that touches `03 - Evergreen/`. It builds the folder with [Quartz](https://quartz.jzhao.xyz) and deploys the result to GitHub Pages.
+[`.github/workflows/deploy-site.yml`](https://github.com/CivicTechWR/core/blob/main/.github/workflows/deploy-site.yml) runs on every push to `main` that touches `01 - Evergreen/`. It builds the folder with [Quartz](https://quartz.jzhao.xyz) and deploys the result to GitHub Pages.
 
 Four deliberate choices:
 
@@ -71,7 +71,7 @@ git clone https://github.com/jackyzha0/quartz.git /tmp/quartz
 cd /tmp/quartz && git checkout 075afd3f712da0088a07f5284a7b3aba37dd61b6
 npm ci
 cp /path/to/core/site/quartz.config.yaml quartz.config.yaml
-rm -rf content && mkdir content && cp -R "/path/to/core/03 - Evergreen/." content/
+rm -rf content && mkdir content && cp -R "/path/to/core/01 - Evergreen/." content/
 npx quartz build --serve
 ```
 

@@ -13,5 +13,6 @@
     "downscalePercent": 100
   },
   "propertiesInDocument": "visible",
-  "promptDelete": false
+  "promptDelete": false,
+  "attachmentFolderPath": "02 - Attachments"
 }

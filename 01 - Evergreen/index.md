@@ -9,7 +9,7 @@ references:
 
 These docs are the working record of **where CivicTechWR keeps its operating knowledge**, what state each surface is in, and which surface owns which facts.
 
-This site is built with [Quartz](https://quartz.jzhao.xyz) from the [`03 - Evergreen/`](https://github.com/CivicTechWR/core/tree/main/03%20-%20Evergreen) folder of the `core` repo — the vault's *evergreen* layer. Edit there, open a PR, and merging to `main` rebuilds this site. See [[Editing-These-Docs]].
+This site is built with [Quartz](https://quartz.jzhao.xyz) from the [`01 - Evergreen/`](https://github.com/CivicTechWR/core/tree/main/01%20-%20Evergreen) folder of the `core` repo — the vault's *evergreen* layer. Edit there, open a PR, and merging to `main` rebuilds this site. See [[Editing-These-Docs]].
 
 ---
 

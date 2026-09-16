@@ -1,4 +1,4 @@
-# 04 - Attachments
+# 02 - Attachments
 
 Files that notes point at rather than restate: data snapshots, exports, PDFs. Nothing here is a note — no frontmatter, not published to the site.
 

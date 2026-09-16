@@ -9,7 +9,7 @@ references:
 
 Fixes derived from [[Drift-Findings]] and [[Process-Index]], ordered by cost-to-fix ratio. Nothing here is assigned yet — owners and dates go in the table as they are picked up at an organizers meeting.
 
-Check items off by editing [`03 - Evergreen/Remediation-Checklist.md`](https://github.com/CivicTechWR/core/blob/main/03%20-%20Evergreen/Remediation-Checklist.md) in the `core` repo and merging to `main`.
+Check items off by editing [`01 - Evergreen/Remediation-Checklist.md`](https://github.com/CivicTechWR/core/blob/main/01%20-%20Evergreen/Remediation-Checklist.md) in the `core` repo and merging to `main`.
 
 ---
 

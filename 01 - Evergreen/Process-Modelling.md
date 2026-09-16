@@ -128,7 +128,7 @@ Every doc that drifted in the audit was a policy-like statement with nothing che
 
 Five of them, and together they rule out more than the notations do.
 
-**1. Model sources are not notes.** The site publishes `03 - Evergreen/` only, so model *source* files live in `04 - Attachments/` and the published page embeds or links the rendered output. Nesting is no longer a constraint — this page previously said the wiki was flat, which was true of the GitHub Wiki and is not true of the Quartz site that replaced it. See [[Editing-These-Docs]].
+**1. Model sources are not notes.** The site publishes `01 - Evergreen/` only, so model *source* files live in `02 - Attachments/` and the published page embeds or links the rendered output. Nesting is no longer a constraint — this page previously said the wiki was flat, which was true of the GitHub Wiki and is not true of the Quartz site that replaced it. See [[Editing-These-Docs]].
 
 **2. BPMN, CMMN and DMN files render on none of our surfaces.** They are XML. A `.bpmn` file in a pull request is an unreviewable blob; GitHub, Discourse and this site all show it as text. Anything we commit needs a companion SVG, or needs to be text in the first place.
 

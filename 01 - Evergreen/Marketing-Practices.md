@@ -7,7 +7,7 @@ references:
 ---
 # Marketing Practices
 
-What CivicTechWR actually publishes, drawn from every source we could retrieve on **2026-08-23**. This is the observed practice, not a proposal — the raw material sits in [`04 - Attachments/`](https://github.com/CivicTechWR/core/tree/main/04%20-%20Attachments).
+What CivicTechWR actually publishes, drawn from every source we could retrieve on **2026-08-23**. This is the observed practice, not a proposal — the raw material sits in [`02 - Attachments/`](https://github.com/CivicTechWR/core/tree/main/02%20-%20Attachments).
 
 Decisions and tooling are on [[Marketing]]. This page is evidence.
 
