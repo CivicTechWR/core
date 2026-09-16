@@ -1,7 +1,7 @@
 ---
 title: Making the Season 8 Poster
 date: 2026-08-30
-reviewed: false
+status: draft
 tags:
 references:
 ---
