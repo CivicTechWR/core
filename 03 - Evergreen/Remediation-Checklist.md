@@ -1,8 +1,15 @@
+---
+title: "Remediation Checklist"
+date: "2026-08-19"
+reviewed: false
+tags:
+references:
+---
 # Remediation Checklist
 
 Fixes derived from [[Drift-Findings]] and [[Process-Index]], ordered by cost-to-fix ratio. Nothing here is assigned yet — owners and dates go in the table as they are picked up at an organizers meeting.
 
-Check items off by editing [`wiki/Remediation-Checklist.md`](https://github.com/CivicTechWR/core/blob/main/wiki/Remediation-Checklist.md) in the `core` repo and merging to `main`.
+Check items off by editing [`03 - Evergreen/Remediation-Checklist.md`](https://github.com/CivicTechWR/core/blob/main/03%20-%20Evergreen/Remediation-Checklist.md) in the `core` repo and merging to `main`.
 
 ---
 
@@ -27,7 +34,7 @@ Check items off by editing [`wiki/Remediation-Checklist.md`](https://github.com/
 
 - [ ] **Adopt the ownership map** in [[Ownership-Model]], or amend it. Everything below assumes it is adopted.
 - [ ] **Decide the fate of the blog.** Assign an owner and a cadence, or retire it publicly. Three seasons of silence is the status quo option. → finding 04
-- [ ] **Decide where process documentation lives** — this wiki or the MkDocs site — and point the other at it. → findings 08, 09
+- [ ] **Decide where process documentation lives** — these docs or the MkDocs site — and point the other at it. → findings 08, 09
 - [ ] **Point the Discourse `CivicTechWR Wiki` category here** rather than growing it, once the above is decided. → finding 09
 - [ ] **Fix the meeting-time fallback** in `_includes/meeting-section.html` to 5:30 PM, and state the soft-start/start distinction somewhere public. → finding 11
 - [ ] **Remove the Code of Conduct copies** that shadow the org-level `.github` one — starting with the project template, so new repos stop inheriting the duplication. → finding 10
@@ -82,7 +89,7 @@ These were open in `.github/docs/org-audit-2026-06-04.md` and have not moved. �
 
 - [ ] **Add a link-checking job to `core`** covering the drift-prone facts: Slack invite validity, event-channel URLs, cross-repo links. Findings 01, 02 and 07 are all things a machine should have caught.
 - [ ] **Find and vendor the Luma → Discourse sync script.** It runs daily against production with an admin API key and its source is in no repository. Get it into `core`, then rotate the key. → finding 13
-- [ ] **Re-audit.** Suggested cadence: once per season, at the finale. Method is documented on [[Editing-This-Wiki]].
+- [ ] **Re-audit.** Suggested cadence: once per season, at the finale. Method is documented on [[Editing-These-Docs]].
 
 ---
 

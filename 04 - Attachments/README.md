@@ -1,8 +1,12 @@
-# Marketing archive
+# 04 - Attachments
 
-Snapshot of CivicTechWR's outward-facing output, captured **2026-08-23**. Raw material for [Marketing Practices](https://github.com/CivicTechWR/core/wiki/Marketing-Practices) and for anyone writing the marketing guide.
+Files that notes point at rather than restate: data snapshots, exports, PDFs. Nothing here is a note — no frontmatter, not published to the site.
+
+Everything currently here is the **marketing archive**: a snapshot of CivicTechWR's outward-facing output, captured **2026-08-23**. It is the raw material for [Marketing Practices](https://civictechwr.github.io/core/marketing-practices) and for anyone writing the marketing guide.
 
 This is a point-in-time archive, not a live sync. Re-capture at season end.
+
+Narrative, decisions and process live in the docs site — see [Marketing](https://civictechwr.github.io/core/marketing) and [Marketing Practices](https://civictechwr.github.io/core/marketing-practices). Day-to-day content work is tracked on [Project 46 — Marketing](https://github.com/orgs/CivicTechWR/projects/46), not here.
 
 ## What's here
 

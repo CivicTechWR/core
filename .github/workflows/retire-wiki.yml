@@ -1,0 +1,83 @@
+name: Retire Wiki
+
+# One-shot, manual. Replaces every page in this repo's GitHub Wiki with a single
+# Home page pointing at the Quartz site, then leaves the wiki alone forever.
+#
+# Run this ONCE, after https://civictechwr.github.io/core is confirmed live.
+# Afterwards this workflow file can be deleted — it is kept only so the
+# retirement is a reviewable, repeatable action rather than manual UI clicking.
+#
+# Deliberately has no `push` trigger. It deletes wiki content.
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type "retire" to confirm wiping the wiki down to one page'
+        required: true
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-wiki
+  cancel-in-progress: false
+
+jobs:
+  retire:
+    name: Replace wiki with a forwarding stub
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check confirmation
+        run: |
+          set -euo pipefail
+          if [ "${{ inputs.confirm }}" != "retire" ]; then
+            echo "::error::Not confirmed. Re-run and type 'retire' in the confirm input."
+            exit 1
+          fi
+
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Replace wiki content
+        env:
+          GH_TOKEN: ${{ secrets.WIKI_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          WIKI_REMOTE="https://github.com/${GITHUB_REPOSITORY}.wiki.git"
+          WIKI_DIR="$(mktemp -d)"
+
+          if ! git ls-remote "$WIKI_REMOTE" >/dev/null 2>&1; then
+            echo "No wiki repo at ${WIKI_REMOTE} — nothing to retire."
+            exit 0
+          fi
+
+          git clone --quiet --depth 1 "$WIKI_REMOTE" "$WIKI_DIR"
+          cd "$WIKI_DIR"
+
+          # GitHub wiki repos are pinned to 'master' and provide no setting to
+          # change it. Detect the real branch rather than assuming.
+          WIKI_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+
+          # Remove every page, then write the single forwarding stub.
+          find . -maxdepth 1 -name '*.md' -type f -delete
+          cp "${GITHUB_WORKSPACE}/site/wiki-stub.md" ./Home.md
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --all
+
+          if git diff --cached --quiet; then
+            echo "Wiki already retired — nothing to do."
+            exit 0
+          fi
+
+          git commit --quiet --message "Retire wiki: docs moved to https://civictechwr.github.io/core"
+
+          git remote set-url origin \
+            "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.wiki.git"
+          git push --quiet origin "HEAD:${WIKI_BRANCH}"
+
+          echo "Wiki retired. It now holds one page pointing at the site."

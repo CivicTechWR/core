@@ -1,3 +1,10 @@
+---
+title: "Marketing"
+date: "2026-08-23"
+reviewed: false
+tags:
+references:
+---
 # Marketing
 
 How CivicTechWR's outward-facing work — blog, social, photography, events, newsletter — is organised, what tooling already exists, and what still needs building.
@@ -144,7 +151,7 @@ Recommended. **Postiz for publishing**, since it already solves the hard part. *
 
 Whatever we choose, two constraints hold:
 
-- **Never auto-post on merge.** A bad merge must not reach the public. Use manual dispatch or a required reviewer, the same way the wiki publish workflow refuses to run on a broken source.
+- **Never auto-post on merge.** A bad merge must not reach the public. Use manual dispatch or a required reviewer, the same way the site build refuses to run on a broken source.
 - **Actions cron is imprecise.** Scheduled runs can be delayed well past their slot. Fine for "sometime Thursday", wrong for "9:00 sharp".
 
 ### Terraform

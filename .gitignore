@@ -1,3 +1,13 @@
 .env
 .env.*
 !.env.example
+
+# Obsidian — per-machine UI state and local trash, not vault configuration
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.trash/
+
+.DS_Store
+
+# Site build output
+public/

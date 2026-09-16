@@ -1,0 +1,132 @@
+name: Deploy Site
+
+# Builds the docs site from "03 - Evergreen/" with Quartz and deploys it to
+# GitHub Pages at https://civictechwr.github.io/core.
+#
+# Replaces the old wiki mirror. Quartz understands what the GitHub Wiki could not:
+# [[wikilinks]], YAML frontmatter, backlinks, nested folders and full-text search.
+#
+# Quartz is not vendored. This clones it at a pinned commit and copies our config
+# (site/quartz.config.yaml) and our notes into that checkout. Upgrading Quartz is
+# a deliberate bump of QUARTZ_REF below.
+#
+# Actions policy: the org allows GitHub-owned, Marketplace-verified, peaceiris/*
+# and ruby/* only. Every action used here is actions/*, so no exception is needed.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "03 - Evergreen/**"
+      - "site/quartz.config.yaml"
+      - ".github/workflows/deploy-site.yml"
+  workflow_dispatch:
+
+# Pages deployment needs id-token; contents stays read-only.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+env:
+  CONTENT_DIR: "03 - Evergreen"
+  QUARTZ_REPO: "https://github.com/jackyzha0/quartz.git"
+  # Pinned. jackyzha0/quartz v5 @ 2026-08-12. Bump deliberately, and re-read
+  # site/quartz.config.yaml against the new quartz.config.default.yaml when you do.
+  QUARTZ_REF: "075afd3f712da0088a07f5284a7b3aba37dd61b6"
+
+jobs:
+  build:
+    name: Build with Quartz
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Validate content source
+        run: |
+          set -euo pipefail
+
+          if [ ! -d "$CONTENT_DIR" ]; then
+            echo "::error::${CONTENT_DIR}/ not found. Nothing to publish."
+            exit 1
+          fi
+
+          page_count=$(find "$CONTENT_DIR" -name '*.md' -type f | wc -l | tr -d ' ')
+          if [ "$page_count" -eq 0 ]; then
+            echo "::error::${CONTENT_DIR}/ contains no .md pages. Refusing to publish an empty site."
+            exit 1
+          fi
+
+          if [ ! -f "$CONTENT_DIR/index.md" ]; then
+            echo "::error::${CONTENT_DIR}/index.md is missing — Quartz serves it at / and the site root would 404."
+            exit 1
+          fi
+
+          # Every note must carry the vault's frontmatter block; Quartz reads
+          # title, tags and date from it.
+          missing=0
+          while IFS= read -r -d '' f; do
+            if ! head -1 "$f" | grep -q '^---$'; then
+              echo "::error file=${f}::Missing YAML frontmatter."
+              missing=1
+            fi
+          done < <(find "$CONTENT_DIR" -name '*.md' -type f -print0)
+          [ "$missing" -eq 0 ] || exit 1
+
+          echo "Validated ${page_count} page(s)."
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Clone Quartz at the pinned commit
+        run: |
+          set -euo pipefail
+          git clone --quiet "$QUARTZ_REPO" "$RUNNER_TEMP/quartz"
+          git -C "$RUNNER_TEMP/quartz" checkout --quiet "$QUARTZ_REF"
+          echo "Quartz $(git -C "$RUNNER_TEMP/quartz" rev-parse --short HEAD)"
+
+      - name: Stage content and config
+        run: |
+          set -euo pipefail
+          rm -rf "$RUNNER_TEMP/quartz/content"
+          mkdir -p "$RUNNER_TEMP/quartz/content"
+          cp -R "${GITHUB_WORKSPACE}/${CONTENT_DIR}/." "$RUNNER_TEMP/quartz/content/"
+          cp "${GITHUB_WORKSPACE}/site/quartz.config.yaml" "$RUNNER_TEMP/quartz/quartz.config.yaml"
+          echo "Staged:"
+          find "$RUNNER_TEMP/quartz/content" -name '*.md' -exec basename {} \; | sort | sed 's/^/  /'
+
+      - name: Install dependencies
+        working-directory: ${{ runner.temp }}/quartz
+        run: npm ci
+
+      # Note: `npx quartz plugin install` is NOT run. It requires a quartz.lock.json,
+      # which a fresh clone does not have ("No quartz.lock.json found"), and the
+      # build resolves the plugins named in quartz.config.yaml on its own. Verified
+      # against the pinned SHA on 2026-08-30.
+
+      - name: Build
+        working-directory: ${{ runner.temp }}/quartz
+        run: npx quartz build --output "${GITHUB_WORKSPACE}/public"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
