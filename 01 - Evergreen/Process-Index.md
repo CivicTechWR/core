@@ -104,7 +104,7 @@ Narrative, tooling and decisions are on [[Marketing]]; this is the inventory onl
 | **Social media posting** | `marketing` [`guides/channels.md`](https://github.com/CivicTechWR/marketing/blob/main/guides/channels.md) (2026-09) — the intended owner, with the channel list corrected<br>org-docs `SocialMedia_Guidelines.md` (2025-01) — **superseded but still live**, still names Twitter and Meetup<br>Drive `Organizing/Example Social Media Posts` (2024-11) | ❌ |
 | Brand assets | Drive `Organizing/MediaKit/Branding/` — brandmarks (SVG + PNG), pre-sized social images, sticker PDF, favicons<br>Sized for `400_Twitter` and `180_Facebook`; nothing for Bluesky or Threads | ⚠️ |
 | Boilerplate copy and blurbs | Drive `Organizing/MediaKit/CivicTechWRBlurbs` | ✅ |
-| Brand voice and tone | `marketing` [`guides/voice.md`](https://github.com/CivicTechWR/marketing/blob/main/guides/voice.md) (2026-09) — voice, emoji field labels, the standard event block, speaker format | ✅ |
+| Brand voice and tone | `marketing` [`guides/voice.md`](https://github.com/CivicTechWR/marketing/blob/main/guides/voice.md) (2026-09) — observed practice, derived from the LinkedIn archive<br>`marketing` [`brand/media-guide.md`](https://github.com/CivicTechWR/marketing/blob/main/brand/media-guide.md) — a **draft statement of intent**, found in Drive 2026-09-20 and not previously inventoried. Compatible on tone, but its anti-objectives contradict how we describe what performs. Reconciliation is `CivicTechWR/marketing#25` | ⚠️ |
 | Visual design system (colour, type) | — nothing anywhere in the org beyond the logo files | 📭 |
 | **Publishing a blog post** | `blog/README.md` links to a `CONTRIBUTING.md` that **does not exist** — the link 404s<br>Named as a duty in Discourse *Volunteer Roles* ("maintain the blog and newsletter"); no owner, no cadence, silent since 2025-09 | 📭 |
 | Newsletter | ctwr-web `_includes/newsletter-signup.html` — a **live Mailchimp list** collecting addresses<br>No sends, no owner, no process | 📭 |
@@ -174,8 +174,8 @@ Marketing is the least-documented area in this index: **nine of sixteen processe
 | | Count |
 | --- | --- |
 | ❌ Conflicting definitions | 8 |
-| ⚠️ Multiple locations, broadly agreeing | 19 |
-| ✅ Single source | 24 |
+| ⚠️ Multiple locations, broadly agreeing | 20 |
+| ✅ Single source | 23 |
 | 📭 Not written down | 17 |
 
 **The eight conflicts are the ones that need a decision**, not an edit: season length, hacknight procedure, event roles, meeting time, the role model, which channel to use, which social channels we are on, and which project template is canonical. Each has two or more good-faith answers written by different people at different times, and no rule for picking between them — which is the gap [[Ownership-Model]] exists to close.
