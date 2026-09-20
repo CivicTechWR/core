@@ -152,7 +152,7 @@ curl -s "https://api2.luma.com/ics/get?entity=calendar&id=cal-BVpgpDCgYaCqcPx"
 curl -s "https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=civictechwr.bsky.social"
 ```
 
-Instagram, Facebook and Threads are not retrievable without account access — the public pages are JavaScript shells. LinkedIn exposes roughly ten recent posts to logged-out requests. See `02 - Attachments/README.md`.
+Instagram, Facebook and Threads are not retrievable without account access — the public pages are JavaScript shells. LinkedIn exposes roughly ten recent posts to logged-out requests. See the marketing archive's README at <https://github.com/CivicTechWR/marketing/tree/main/archive/2026-08-23>.
 
 **Measure recency by last *content* change, not `pushed_at`.** Two repos in this org look active in the GitHub listing while having had no content change in eleven months — the commits are deploy and CI churn. Use `gh api "repos/OWNER/REPO/commits?path=docs&per_page=5"`.
 
