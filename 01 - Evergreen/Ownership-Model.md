@@ -46,6 +46,7 @@ One surface owns each *kind* of fact. Everywhere else links rather than restates
 | Policies, guidelines, templates, process | **GitHub** (`.github` org repo + these docs) | Link. |
 | Banking, funding applications, signed agreements | **Google Drive** | Link. Nothing else belongs there. |
 | Public narrative — what we did and why | **Blog** | Link. |
+| Published content — social posts, campaigns, brand assets | **`marketing` repo** | Link. |
 | Project code and project-specific docs | **The project repo** | Link. |
 
 ---
@@ -68,6 +69,7 @@ Adopting this means:
 - **Discourse stops being a documentation destination** and goes back to being a discussion destination. The `CivicTechWR Wiki` category should be pointed here rather than grown — see [[Drift-Findings]] finding 09.
 - **Drive shrinks deliberately** to only what cannot legally or practically live in Git.
 - **Someone has to own the blog** or it should be honestly retired. Three seasons of silence on our only public narrative surface is itself a message.
+- **Marketing content left this repo.** `core` keeps the register — which processes exist, who owns what, what has drifted. What we actually publish lives in [`marketing`](https://github.com/CivicTechWR/marketing). The split only holds if this repo links there rather than restating it, which is the same rule everything else on this page follows.
 
 ---
 

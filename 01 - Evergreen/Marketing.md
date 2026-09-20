@@ -9,6 +9,8 @@ references:
 
 How CivicTechWR's outward-facing work — blog, social, photography, events, newsletter — is organised, what tooling already exists, and what still needs building.
 
+> **Content moved.** What we publish — posts, guides, brand assets, the archive — now lives in [`marketing`](https://github.com/CivicTechWR/marketing). This page keeps the decisions, the tooling picture and the risks. Link there; do not restate it here.
+
 ## Scope
 
 **Marketing is one-to-many, public, published.** Anything one-to-one and private is *out of scope* — partner emails, sponsor requests, speaker invitations, DMs. In CTWR's existing vocabulary that is **outreach**, and the two words are already used that way: `OutreachLetter.md` is a cold-email template, `InterviewQuestions.md` is a community outreach guide, and the Season 8 volunteer role is named "Marketing, **Outreach** and Documentation" — listing them as distinct jobs.
@@ -45,7 +47,7 @@ Compiled **2026-08-23**, during Season 8.
 
 ## Where the work is tracked
 
-**[GitHub Project 46 — Marketing](https://github.com/orgs/CivicTechWR/projects/46)** is the working board. Items live in it as drafts or as issues in `core`.
+**[GitHub Project 46 — Marketing](https://github.com/orgs/CivicTechWR/projects/46)** is the working board. Every item on it is an issue in [`marketing`](https://github.com/CivicTechWR/marketing); the pipeline build is tracked separately on [Project 47](https://github.com/orgs/CivicTechWR/projects/47) under `Pillar: Marketing`.
 
 **Fields**
 
@@ -86,7 +88,7 @@ Service configuration lives in the private `ctwr-apps` repo.
 
 **Postiz is the significant find.** It covers most of what we would otherwise build ourselves, and it already runs. **Shlink answers the "we don't measure anything" gap** — link tracking is a solved problem here, just an unused one.
 
-Observed output across every channel is inventoried on [[Marketing-Practices]].
+Observed output across every channel is inventoried in the `marketing` repo — see [`guides/`](https://github.com/CivicTechWR/marketing/tree/main/guides) for the conventions drawn from it, and [`archive/2026-08-23/`](https://github.com/CivicTechWR/marketing/tree/main/archive/2026-08-23) for the evidence. [[Marketing-Practices]] is now a pointer.
 
 ---
 
@@ -177,7 +179,7 @@ Detail and current locations are on [[Process-Index]]. Summary of state:
 2. **Event page checklist** — creating the Luma event is named as a duty and defined nowhere. Now explicitly this pillar's job. Needs a title convention (we have three separators doing the same job), description structure, image, and how far ahead to publish.
 3. **Photo shot list and storage convention** — `Photos/YYYY/YYYY-MM-DD-event/`, plus a five-line shot list so a volunteer knows when they are done.
 4. **Photo consent practice** — see Risks.
-5. **Restart recaps, then build the recap → post pipeline.** Recaps are *not* currently running: 11 in Season 4, 12 in Season 5, then **0 in Season 6**, 2 in Season 7, 1 in Season 8. The habit stopped alongside the blog in late 2025. A recap is most of a short post already, but the input has to exist first. See [[Marketing-Practices]].
+5. **Restart recaps, then build the recap → post pipeline.** Recaps are *not* currently running: 11 in Season 4, 12 in Season 5, then **0 in Season 6**, 2 in Season 7, 1 in Season 8. The habit stopped alongside the blog in late 2025. A recap is most of a short post already, but the input has to exist first. See the marketing archive's [`observed-practice.md`](https://github.com/CivicTechWR/marketing/blob/main/archive/2026-08-23/observed-practice.md).
 6. **Brand voice and tone** — one page. Nothing exists.
 7. **Channel guidance** — which channel gets what. The current guide names channels we left and omits two we use.
 8. **Measurement** — decide whether we measure reach at all. Shlink makes this cheap if we do.
